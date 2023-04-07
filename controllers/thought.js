@@ -1,13 +1,10 @@
-// Thoughts
-// getAllThoughts
-
 const { Thought } = require("../models");
 
 module.exports = {
   // getAllThoughts
   getAllThoughts(req, res) {
     Thought.find()
-      .then(() => res.json())
+      .then((thoughts) => res.json(thoughts))
       .catch((err) => res.status(500).json(err));
   },
   // getSingle

@@ -12,13 +12,13 @@ module.exports = {
   },
   // Get a single user By userName
   getSingleUser(req, res) {
-    User.findOne({ _id: req.params.username })
-      .select()
-      .then((userName) => {
-        if (!userName) {
-          res.status(404).json({ message: "No user with that name" });
+    User.findOne({ _id: req.params.userID })
+      .select("-__v")
+      .then((user) => {
+        if (!user) {
+          res.status(404).json({ message: "No user with that ID" });
         } else {
-          res.json(userName);
+          res.json(user);
         }
       })
       .catch((err) => res.status(500).json(err));
@@ -35,16 +35,19 @@ module.exports = {
 
   // delete User by ID
   deleteUser(req, res) {
-    User.findByIdAndDelete(req.params.id)
+    User.findByIdAndDelete(req.params.userID)
       .then((deletedUser) => {
         if (!deletedUser) {
           return res.status(404).json({ message: "No user with that ID" });
         }
-        return Thought.deleteMany({ _id: { $in: deletedUser.thoughts } });
+        return Thought.deleteMany({ _id: { $in: deletedUser.thoughts } }).then(
+          () => {
+            return res.json({
+              message: "User and associated thoughts deleted!",
+            });
+          }
+        );
       })
-      .then(() =>
-        res.json({ message: "User and associated thoughts deleted!" })
-      )
       .catch((err) => res.status(500).json(err));
   },
 
