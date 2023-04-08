@@ -14,8 +14,8 @@ module.exports = {
   },
   createReaction(req, res) {
     Reaction.create(req.body)
-      .then((userReactionCreation) => {
-        res.json(userReactionCreation);
+      .then((reaction) => {
+        res.json(reaction);
       })
       .catch((err) => {
         console.log(err);

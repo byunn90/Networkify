@@ -15,9 +15,9 @@ router
   .route("/:thoughtId")
   // get single thought
   .get(getSingleThought)
-  // create a single thought
+  // update a single thought
   .put(updateThought)
-  // create a thought
+  // delete a thought at one end point
   .delete(deleteThought);
-// delete a thought at one end point
+
 module.exports = router;
