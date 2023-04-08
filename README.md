@@ -6,10 +6,10 @@ This challenge requires the creation of an API for a social network application 
 
 ## Technologies Used:
 
-Node.js
-Express.js
-MongoDB
-Mongoose
+- Node.js
+- Express.js
+- MongoDB
+- Mongoose
 
 ## Installation
 
