@@ -27,6 +27,10 @@ After installation, use the API to perform CRUD operations on users, thoughts, a
 
 ## Video
 
+-User https://www.youtube.com/watch?v=DOZ1TOk2PCM
+
+-Thought https://www.youtube.com/watch?v=HmjO3OXRFCs
+
 ## Contact-Details
 
 For any questions or concerns, please contact me at kayhanturk90@Live.com.
