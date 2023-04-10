@@ -25,6 +25,8 @@ Test the API using Insomnia Core or a similar application to test HTTP requests.
 
 After installation, use the API to perform CRUD operations on users, thoughts, and reactions.
 
+## Video
+
 ## Contact-Details
 
 For any questions or concerns, please contact me at kayhanturk90@Live.com.

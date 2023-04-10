@@ -1,4 +1,4 @@
-const { User } = require("../models");
+const { User, Thought } = require("../models");
 
 // GET all users
 module.exports = {
@@ -48,12 +48,15 @@ module.exports = {
           }
         );
       })
-      .catch((err) => res.status(500).json(err));
+      .catch((err) => {
+        console.error(err);
+        return res.status(500).json({ message: "Internal server error" });
+      });
   },
 
   // update user by its id
   updateUser(req, res) {
-    const userId = req.params.id;
+    const userId = req.params.userID;
     const updatedUserData = req.body;
     User.findByIdAndUpdate(
       userId,
